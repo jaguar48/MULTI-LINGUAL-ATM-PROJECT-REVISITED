@@ -31,6 +31,7 @@ namespace ATM_PROJECT
             new User {Name ="Allen", Pin = "5555", Balance = 8000, Account = "345432"}
 
      };
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             Console.WriteLine("Tẹ PIN oni-nọmba mẹrin rẹ sii");
             var enter_pin = Console.ReadLine();
@@ -44,7 +45,7 @@ namespace ATM_PROJECT
 
                     Console.WriteLine($"Kaabo {user.Name} {user.Balance} ");
 
-                    Console.WriteLine("Tẹ 1 lati ṣayẹwo iwọntunwọnsi, 2 lati yọ kuro, 3 lati gbe lọ, 4 lati ṣafihan gbogbo awọn akọọlẹ, 5 lati jade");
+                    Console.WriteLine("Tẹ 1 lati ṣayẹwo iwọntunwọnsi, 2 lati yọkuro, 3 lati gbe lọ, 4 lati ṣafihan gbogbo awọn akọọlẹ, 5 lati jade");
                     var check_option = Console.ReadLine();
                     if (check_option == "1")
                     {

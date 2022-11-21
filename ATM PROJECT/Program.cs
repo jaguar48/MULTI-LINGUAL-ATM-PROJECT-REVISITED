@@ -12,30 +12,44 @@ namespace ATM_PROJECT
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome, Press 1 for english, 2 for Igbo, 3 for Yoruba");
+            Console.WriteLine("Welcome to Motion Banking and Finance Limited! \nPress 1 for english, 2 for Igbo, 3 for Yoruba, 4 for exit");
             var Languageoption = Console.ReadLine();
+
             if (Languageoption != null)
             {
-                if (Languageoption == "1")
+                while (true)
                 {
-                    App.Userrecords();
+                    if (Languageoption == "1")
+                    {
+                        App.Userrecords();
+                    }
+                    else if (Languageoption == "2")
+                    {
+                        AppIgbo.Userrecords();
+                    }
+                    else if (Languageoption == "3")
+                    {
+                        AppYoruba.Userrecords();
+                    }
+                    else if (Languageoption == "4")
+                    {
+                        Console.WriteLine("Thank you for choosing us");
+                        break;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Invalid option");
+                        break;
+                    }
+
                 }
-                else if (Languageoption == "2")
-                {
-                    AppIgbo.Userrecords();
-                }
-                else if (Languageoption == "3")
-                {
-                    AppYoruba.Userrecords();
-                }
-            }
-            else
-            {
-                Console.WriteLine("Incorrect, please select from options");
-            }
 
 
-            
+
+
+            }
+
 
         }
     }

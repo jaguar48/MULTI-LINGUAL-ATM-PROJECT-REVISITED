@@ -32,7 +32,7 @@ namespace ATM_PROJECT
             new User {Name ="Allen", Pin = "5555", Balance = 8000, Account = "345432"}
 
      };
-
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine(@"Tinye ntụtụ ọnụọgụ anọ gị ");
             var enter_pin = Console.ReadLine();
 
