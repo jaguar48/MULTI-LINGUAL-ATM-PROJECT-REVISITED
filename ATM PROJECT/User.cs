@@ -31,14 +31,15 @@ namespace ATM_PROJECT
 
      };
 
-            Console.WriteLine("Enter pin ");
+            Console.WriteLine("Enter your 4 digit pin");
             var enter_pin = Console.ReadLine();
 
-                 var user = users.FirstOrDefault(x => x.Pin == enter_pin);
+            var user = users.FirstOrDefault(x => x.Pin == enter_pin);
             if (user is not null)
             {
                 while (true)
                 {
+                   
 
                     Console.WriteLine($"Welcome {user.Name} {user.Balance} ");
 
@@ -51,14 +52,14 @@ namespace ATM_PROJECT
                         Console.WriteLine("Press any key to go to main menu");
                        
                         Console.ReadKey();
-                        continue;
+                        continue;   
                     }
                     else if (check_option == "2")
                     {
                         Withdrawal withd = new Withdrawal();
                         Console.WriteLine($"{withd.Cashdrawal(user)}");
                         Console.WriteLine("Press any key to go to main menu");
-                        Console.Clear();
+                        
                         Console.ReadKey();
                         continue;
 
@@ -72,7 +73,7 @@ namespace ATM_PROJECT
                         {
                             Console.WriteLine(Transfer.InitiateTransfer(user, reciver));
                             Console.WriteLine("Press any key to go to main menu");
-                            Console.Clear();
+                            
                             Console.ReadKey();
                             continue;
 
@@ -81,17 +82,15 @@ namespace ATM_PROJECT
                         {
                             Console.WriteLine("account does not exist");
                             Console.WriteLine("Press any key to go to main menu");
-                            Console.Clear();
+                           
                             Console.ReadKey();
                             continue;
                         }
-                        
-                       
-                      
+            
                     }
                     else if (check_option == "4")
                     {
-                        users.ForEach(user => Console.WriteLine($"user name {user.Name} account number {user.Account}\n"));
+                        users.ForEach(user => Console.WriteLine($"user name: {user.Name} account number: {user.Account} Balance: {user.Balance}\n"));
                         Console.WriteLine("Press any key to go to main menu");
 
                         Console.ReadKey();
@@ -99,6 +98,7 @@ namespace ATM_PROJECT
                     }
                     else if( check_option == "5")
                     {
+                        Console.WriteLine("Thank you for choosing us! Have a nice day.");
                         break;
                     }
                     else

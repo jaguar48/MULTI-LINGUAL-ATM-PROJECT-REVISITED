@@ -13,7 +13,7 @@ namespace ATM_PROJECT
             Console.WriteLine("How much do you want to transfer");
             decimal maketransfer = Convert.ToDecimal(Console.ReadLine());
             if (sender.Account == receiver.Account) 
-                return "you cannot make transfer toself";
+                return "You cannot make transfer toself";
              if (sender.Balance >= maketransfer)
             {
                 receiver.Balance += maketransfer;

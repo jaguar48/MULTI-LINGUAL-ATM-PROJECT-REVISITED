@@ -10,7 +10,7 @@ namespace ATM_PROJECT
     {
         public string Cashdrawal(User user)
         {
-                 /*Balance balance  =   new Balance();*/
+                
                 
                 Console.WriteLine("Enter amount to withdraw");
 
