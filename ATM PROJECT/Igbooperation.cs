@@ -33,7 +33,7 @@ namespace ATM_PROJECT
 
      };
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.WriteLine(@"Tinye ntụtụ ọnụọgụ anọ gị ");
+            Console.WriteLine("Tinye ntụtụ ọnụọgụ anọ gị ");
             var enter_pin = Console.ReadLine();
 
             var user = users.FirstOrDefault(x => x.Pin == enter_pin);
@@ -45,13 +45,13 @@ namespace ATM_PROJECT
 
                     Console.WriteLine($"Nnoo {user.Name} {user.Balance} ");
 
-                    Console.WriteLine("@Pịa 1 ka ịlele itule, 2 ịdọrọ, 3 ka ibufee, 4 ka igosipụta akaụntụ niile, 5 pụọ");
+                    Console.WriteLine("Pịa 1 ka ịlele itule, 2 ịdọrọ, 3 ka ibufee, 4 ka igosipụta akaụntụ niile, 5 pụọ");
                     var check_option = Console.ReadLine();
                     if (check_option == "1")
                     {
 
                         Console.WriteLine($"itule: ${user.Balance}");
-                        Console.WriteLine(@"Pịa igodo ọ bụla ka ịga na menu isi");
+                        Console.WriteLine("Pịa igodo ọ bụla ka ịga na menu isi");
 
                         Console.ReadKey();
                         continue;
