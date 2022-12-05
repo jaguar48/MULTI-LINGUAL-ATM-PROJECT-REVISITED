@@ -8,6 +8,7 @@ namespace ATM_PROJECT
 {
     public class Transfer
     {
+
         public static string InitiateTransfer(User sender, User receiver)
         {
             Console.WriteLine("How much do you want to transfer");
@@ -20,6 +21,7 @@ namespace ATM_PROJECT
                 sender.Balance -= maketransfer;
                 return $"Transfer successful {maketransfer} was sent from {sender.Name} to {receiver.Name}";
 
+                
             }
             
             return "insufficient balance";

@@ -19,7 +19,7 @@ namespace ATM_PROJECT
 
    public class App
     {
-        public static void Userrecords()
+        public void Userrecords()
         {
 
             var users = new List<User>{
@@ -56,7 +56,12 @@ namespace ATM_PROJECT
                     }
                     else if (check_option == "2")
                     {
-                        Withdrawal withd = new Withdrawal();
+                       
+                        var receipt = new ReceiptGen();
+                        Withdrawal makewithdrawl = new Withdrawal();
+
+                        makewithdrawl.withdrawhandler += receipt;
+
                         Console.WriteLine($"{withd.Cashdrawal(user)}");
                         Console.WriteLine("Press any key to go to main menu");
                         

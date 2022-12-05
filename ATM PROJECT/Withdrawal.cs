@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace ATM_PROJECT
 {
-    internal class Withdrawal
+    /*public class WithdrawalEventArgs : EventArgs
     {
-        public string Cashdrawal(User user)
+
+        public User user { get; set; }
+    }*/
+
+    public class Withdrawal
+    {
+        public delegate void withdrawdelegate(object source, EventArgs e);
+        public event withdrawdelegate withdrawhandler;
+/*        public event EventHandler<WithdrawalEventArgs> Onwithdrawal;
+*/
+        
+        public void Cashdrawal(User user)
         {
                 
                 
@@ -20,12 +31,21 @@ namespace ATM_PROJECT
 
                    user.Balance -= with_bln;
 
-                    return $"Successfully withdrawn ${with_bln} new balace ${user.Balance}";
+                    Console.WriteLine( $"Successfully withdrawn ${with_bln} new balace ${user.Balance}");
                 }
-            return "Insufficient balance";
 
-                
-           
+            
+
+            Console.WriteLine("Insufficient balance");
+            Withdrawalprocess(user);
+
+        }
+
+        protected virtual void Withdrawalprocess(User user)
+        {
+
+            withdrawhandler?.Invoke(this, EventArgs.Empty);
+
         }
          
 }
